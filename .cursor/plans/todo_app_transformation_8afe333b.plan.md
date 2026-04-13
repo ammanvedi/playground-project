@@ -4,31 +4,31 @@ overview: Transform the default Vite+React starter into a fully-featured todo li
 todos:
   - id: deps
     content: Install react-router-dom dependency
-    status: pending
+    status: completed
   - id: data-layer
     content: Create data model types, localStorage hooks (useTodos, useSettings), and seed default data
-    status: pending
+    status: completed
   - id: routing
     content: Set up BrowserRouter, Layout shell, and route definitions in App.tsx
-    status: pending
+    status: completed
   - id: pages
     content: "Build all 4 pages: HomePage, SettingsPage, ArchivePage, TodoDetailPage (with /todo/latest redirect)"
-    status: pending
+    status: completed
   - id: components
     content: "Build shared components: Layout (with CRT overlay + nav), TodoList, TodoItem"
-    status: pending
+    status: completed
   - id: styling
     content: Implement full CRT terminal dark-mode aesthetic (fonts, scanlines, glow, colors, animations)
-    status: pending
+    status: completed
   - id: manifest-api
     content: Add Vite dev server middleware for /api/md-manifest endpoint
-    status: pending
+    status: completed
   - id: markdown-specs
     content: Write markdown DSL specs for all 4 pages following the formatting guidelines
-    status: pending
+    status: completed
   - id: verify
     content: Start dev server, open browser, visually verify all pages and the API endpoint
-    status: pending
+    status: completed
 isProject: false
 ---
 
