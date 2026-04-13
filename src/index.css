@@ -628,3 +628,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Section highlight for workbench linking */
+[data-section-id] {
+  transition: outline-color 0.2s ease, outline-offset 0.2s ease;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.section-highlighted {
+  outline-color: rgba(26, 95, 122, 0.4);
+}

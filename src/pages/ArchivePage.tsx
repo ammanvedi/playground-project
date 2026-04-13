@@ -19,7 +19,7 @@ export default function ArchivePage() {
         </div>
       </div>
 
-      <div className="section">
+      <div className="section" data-section-id="archived-task-list">
         <div className="section-header">
           <span className="section-title">Archived tasks</span>
           <span className="section-count">{archivedTodos.length} {archivedTodos.length === 1 ? 'item' : 'items'}</span>

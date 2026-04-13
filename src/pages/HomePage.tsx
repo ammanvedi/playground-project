@@ -21,7 +21,7 @@ export default function HomePage() {
 
   return (
     <div className="page">
-      <div className="hero-section">
+      <div className="hero-section" data-section-id="header-section">
         <div className="hero-text">
           <h1>Manage<br />everything.</h1>
           <p className="hero-sub">
@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="stat-bar">
+      <div className="stat-bar" data-section-id="task-queue">
         <div className="stat-cell">
           <div className="stat-label">Pending</div>
           <div className="stat-value">{activeCount}</div>
@@ -55,13 +55,15 @@ export default function HomePage() {
         </div>
       </div>
 
-      <TodoList
-        todos={activeTodos}
-        title="Task queue"
-        emptyMessage="No active tasks. Create one below."
-      />
+      <div data-section-id="task-queue">
+        <TodoList
+          todos={activeTodos}
+          title="Task queue"
+          emptyMessage="No active tasks. Create one below."
+        />
+      </div>
 
-      <div className="section">
+      <div className="section" data-section-id="add-task">
         <div className="section-header">
           <span className="section-title">New task</span>
         </div>

@@ -24,7 +24,7 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <div className="section">
+      <div className="section" data-section-id="operator-name">
         <div className="section-header">
           <span className="section-title">Profile</span>
         </div>
@@ -43,7 +43,7 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <div className="section">
+      <div className="section" data-section-id="data-management">
         <div className="section-header">
           <span className="section-title">Data</span>
         </div>

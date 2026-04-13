@@ -14,11 +14,15 @@ export const manifests: PageManifest[] = [
     description: 'Main todo list dashboard — the SYSOP command center',
     spec: `# Home — SYSOP Command Center
 
+<div id="header-section"></div>
+
 ## Header Section
 
 The top of the page displays a *session info bar* showing the operator's name (loaded from settings), the current system time, and connection status. The greeting follows the format **"SESSION: {name} // ACTIVE"**.
 
 The operator name is **editable via the Settings page** and defaults to **"OPERATOR"** if unset.
+
+<div id="task-queue"></div>
 
 ## Task Queue
 
@@ -30,9 +34,13 @@ Below the header, the main *task queue panel* lists all non-archived todos. Each
 
 Tasks are **sorted by creation date** (newest first). Clicking any task row navigates to its detail page at \`/todo/:id\`.
 
+<div id="empty-state"></div>
+
 ## Empty State
 
 When no active tasks exist, the panel displays a centered message: **"NO ACTIVE TASKS IN QUEUE"** with a prompt to add a new task.
+
+<div id="add-task"></div>
 
 ## Add Task
 
@@ -46,6 +54,8 @@ A *command input row* at the bottom of the queue allows creating new tasks inlin
     description: 'Operator configuration panel',
     spec: `# Settings — Operator Config
 
+<div id="operator-name"></div>
+
 ## Operator Name
 
 A single *terminal input field* allows the operator to set their display name. This name appears in the home page session bar and throughout the interface.
@@ -53,6 +63,8 @@ A single *terminal input field* allows the operator to set their display name. T
 The field **auto-saves on change** with no explicit submit button — mimicking a live terminal configuration. The value **persists in localStorage** across sessions.
 
 **Default value**: "OPERATOR". If the field is cleared, the name reverts to the default.
+
+<div id="data-management"></div>
 
 ## Data Management
 
@@ -65,6 +77,8 @@ A **RESET_DATA** command button clears all todos and restores the default seed d
     title: 'Archive',
     description: 'Decommissioned tasks storage',
     spec: `# Archive — Decommissioned Tasks
+
+<div id="archived-task-list"></div>
 
 ## Archived Task List
 
@@ -88,6 +102,8 @@ When no archived tasks exist, displays: **"ARCHIVE EMPTY // NO DECOMMISSIONED TA
     description: 'Full task inspection and edit terminal',
     spec: `# Todo Detail — Task Inspector
 
+<div id="task-fields"></div>
+
 ## Task Fields
 
 The detail view presents all task fields in a *terminal form layout*:
@@ -104,9 +120,13 @@ All fields **auto-save on change** to localStorage.
 
 The status field uses a *terminal select* element. The available transitions are unrestricted — any status can move to any other status. The status indicator block updates color immediately on change.
 
+<div id="archive-action"></div>
+
 ## Archive Action
 
 When the task status is **"completed"**, an **[ARCHIVE]** command becomes available. This moves the task to archived status and redirects to the archive page.
+
+<div id="delete-action"></div>
 
 ## Delete Action
 

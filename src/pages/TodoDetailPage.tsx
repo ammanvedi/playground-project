@@ -74,7 +74,7 @@ export default function TodoDetailPage() {
 
       <div className="detail-heading">{todo.name}</div>
 
-      <div className="section">
+      <div className="section" data-section-id="task-fields">
         <div className="section-header">
           <span className="section-title">Details</span>
         </div>
@@ -141,7 +141,7 @@ export default function TodoDetailPage() {
         </div>
       </div>
 
-      <div className="section">
+      <div className="section" data-section-id="delete-action">
         <div className="section-header">
           <span className="section-title">Actions</span>
         </div>
