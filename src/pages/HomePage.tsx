@@ -23,7 +23,7 @@ export default function HomePage() {
     <div className="page">
       <div className="hero-section" data-section-id="header-section">
         <div className="hero-text">
-          <h1>Manage<br />everything.</h1>
+          <h1 data-section-id="hero-heading">Manage<br />everything.</h1>
           <p className="hero-sub">
             Unified task tracking for {settings.name.toLowerCase() || 'you'}. Queue, execute, and archive with zero friction.
           </p>
@@ -41,15 +41,15 @@ export default function HomePage() {
       </div>
 
       <div className="stat-bar" data-section-id="task-queue">
-        <div className="stat-cell">
+        <div className="stat-cell" data-section-id="stat-pending">
           <div className="stat-label">Pending</div>
           <div className="stat-value">{activeCount}</div>
         </div>
-        <div className="stat-cell">
+        <div className="stat-cell" data-section-id="stat-in-progress">
           <div className="stat-label">In progress</div>
           <div className="stat-value">{inProgressCount}</div>
         </div>
-        <div className="stat-cell">
+        <div className="stat-cell" data-section-id="stat-completed">
           <div className="stat-label">Completed</div>
           <div className="stat-value">{completedCount}</div>
         </div>
@@ -78,6 +78,7 @@ export default function HomePage() {
             className="text-input"
             autoComplete="off"
             spellCheck={false}
+            data-section-id="new-task-input"
           />
           <button onClick={handleAdd} className="btn">
             Add &rarr;

@@ -15,10 +15,10 @@ function formatDate(iso: string): string {
 
 export default function TodoItem({ todo }: { todo: Todo }) {
   return (
-    <Link to={`/todo/${todo.id}`} className="todo-row">
-      <span className={`todo-status ${STATUS_CLASS[todo.status]}`} />
-      <span className="todo-name">{todo.name}</span>
-      <span className="todo-date">{formatDate(todo.dueDate)}</span>
+    <Link to={`/todo/${todo.id}`} className="todo-row" data-section-id="todo-row">
+      <span className={`todo-status ${STATUS_CLASS[todo.status]}`} data-section-id="status-indicator" />
+      <span className="todo-name" data-section-id="todo-name">{todo.name}</span>
+      <span className="todo-date" data-section-id="todo-date">{formatDate(todo.dueDate)}</span>
       <span className="todo-arrow">&rarr;</span>
     </Link>
   );

@@ -25,7 +25,7 @@ export default function ArchivePage() {
           <span className="section-count">{archivedTodos.length} {archivedTodos.length === 1 ? 'item' : 'items'}</span>
         </div>
         {archivedTodos.length === 0 ? (
-          <div className="empty-state">No archived tasks yet.</div>
+          <div className="empty-state" data-section-id="archive-empty-state">No archived tasks yet.</div>
         ) : (
           <div className="todo-list">
             {archivedTodos.map(todo => (
@@ -37,6 +37,7 @@ export default function ArchivePage() {
                     updateTodo(todo.id, { status: 'todo' });
                   }}
                   className="btn btn--ghost btn--small"
+                  data-section-id="restore-action"
                 >
                   Restore
                 </button>

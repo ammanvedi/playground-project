@@ -38,8 +38,9 @@ export default function SettingsPage() {
             autoComplete="off"
             spellCheck={false}
             placeholder="Your name"
+            data-section-id="settings-name-input"
           />
-          <div className="field-hint">Auto-saved to local storage.</div>
+          <div className="field-hint" data-section-id="auto-save-hint">Auto-saved to local storage.</div>
         </div>
       </div>
 
@@ -56,6 +57,7 @@ export default function SettingsPage() {
             <button
               onClick={handleReset}
               className={`btn ${confirmReset ? 'btn--danger' : 'btn--ghost'}`}
+              data-section-id="reset-button"
             >
               {confirmReset ? 'Confirm reset' : 'Reset data'}
             </button>

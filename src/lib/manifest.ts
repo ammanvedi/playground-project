@@ -18,7 +18,7 @@ export const manifests: PageManifest[] = [
 
 ## Header Section
 
-The top of the page displays a *session info bar* showing the operator's name (loaded from settings), the current system time, and connection status. The greeting follows the format **"SESSION: {name} // ACTIVE"**.
+<span id="hero-heading"></span>The top of the page displays a *session info bar* showing the operator's name (loaded from settings), the current system time, and connection status. The greeting follows the format **"SESSION: {name} // ACTIVE"**.
 
 The operator name is **editable via the Settings page** and defaults to **"OPERATOR"** if unset.
 
@@ -26,11 +26,11 @@ The operator name is **editable via the Settings page** and defaults to **"OPERA
 
 ## Task Queue
 
-Below the header, the main *task queue panel* lists all non-archived todos. Each task entry is rendered as a *terminal row* showing:
+Below the header, the main *task queue panel* lists all non-archived todos. Each task entry is rendered as a <span id="todo-row"></span>*terminal row* showing:
 
-- A **status indicator block** color-coded by state: **dim gray** for todo, **amber/yellow** for in-progress, **green** for completed
-- The task name in monospaced uppercase
-- The due date formatted as a compact timestamp
+- A <span id="status-indicator"></span>**status indicator block** color-coded by state: <span id="stat-pending"></span>**dim gray** for todo, <span id="stat-in-progress"></span>**amber/yellow** for in-progress, <span id="stat-completed"></span>**green** for completed
+- <span id="todo-name"></span>The task name in monospaced uppercase
+- <span id="todo-date"></span>The due date formatted as a compact timestamp
 
 Tasks are **sorted by creation date** (newest first). Clicking any task row navigates to its detail page at \`/todo/:id\`.
 
@@ -44,7 +44,7 @@ When no active tasks exist, the panel displays a centered message: **"NO ACTIVE 
 
 ## Add Task
 
-A *command input row* at the bottom of the queue allows creating new tasks inline. The operator types a task name and the system creates it with status **"todo"** and a default due date of **7 days from now**.
+A <span id="new-task-input"></span>*command input row* at the bottom of the queue allows creating new tasks inline. The operator types a task name and the system creates it with status **"todo"** and a default due date of **7 days from now**.
 `,
   },
   {
@@ -58,9 +58,9 @@ A *command input row* at the bottom of the queue allows creating new tasks inlin
 
 ## Operator Name
 
-A single *terminal input field* allows the operator to set their display name. This name appears in the home page session bar and throughout the interface.
+A single <span id="settings-name-input"></span>*terminal input field* allows the operator to set their display name. This name appears in the home page session bar and throughout the interface.
 
-The field **auto-saves on change** with no explicit submit button — mimicking a live terminal configuration. The value **persists in localStorage** across sessions.
+The field <span id="auto-save-hint"></span>**auto-saves on change** with no explicit submit button — mimicking a live terminal configuration. The value **persists in localStorage** across sessions.
 
 **Default value**: "OPERATOR". If the field is cleared, the name reverts to the default.
 
@@ -68,7 +68,7 @@ The field **auto-saves on change** with no explicit submit button — mimicking 
 
 ## Data Management
 
-A **RESET_DATA** command button clears all todos and restores the default seed data. This action is **irreversible** and displays a confirmation prompt before executing.
+A <span id="reset-button"></span>**RESET_DATA** command button clears all todos and restores the default seed data. This action is **irreversible** and displays a confirmation prompt before executing.
 `,
   },
   {
@@ -84,7 +84,7 @@ A **RESET_DATA** command button clears all todos and restores the default seed d
 
 Displays all tasks with status **"archived"** in a *dimmed terminal list*. Archived tasks appear with muted styling to indicate their inactive state.
 
-Each entry shows the task name, original due date, and an **[RESTORE]** action that moves the task back to **"todo"** status, returning it to the home page queue.
+Each entry shows the task name, original due date, and an <span id="restore-action"></span>**[RESTORE]** action that moves the task back to **"todo"** status, returning it to the home page queue.
 
 ## How Tasks Arrive Here
 
@@ -92,7 +92,7 @@ Tasks are archived via the **archive action** on the todo detail page. Only task
 
 ## Empty State
 
-When no archived tasks exist, displays: **"ARCHIVE EMPTY // NO DECOMMISSIONED TASKS"**.
+When no archived tasks exist, displays: <span id="archive-empty-state"></span>**"ARCHIVE EMPTY // NO DECOMMISSIONED TASKS"**.
 `,
   },
   {
@@ -108,33 +108,35 @@ When no archived tasks exist, displays: **"ARCHIVE EMPTY // NO DECOMMISSIONED TA
 
 The detail view presents all task fields in a *terminal form layout*:
 
-- **NAME**: Editable text input, displayed in uppercase monospace
-- **DESCRIPTION**: Multi-line editable text area
-- **STATUS**: Selectable from the status options — **todo**, **in-progress**, **completed**, **archived**
-- **DUE_DATE**: Date input field
-- **CREATED_AT**: Read-only timestamp, displayed but not editable
+- <span id="field-name"></span>**NAME**: Editable text input, displayed in uppercase monospace
+- <span id="field-description"></span>**DESCRIPTION**: Multi-line editable text area
+- <span id="field-status"></span>**STATUS**: Selectable from the status options — **todo**, **in-progress**, **completed**, **archived**
+- <span id="field-due-date"></span>**DUE_DATE**: Date input field
+- <span id="field-created-at"></span>**CREATED_AT**: Read-only timestamp, displayed but not editable
 
 All fields **auto-save on change** to localStorage.
 
 ## Status Transitions
 
-The status field uses a *terminal select* element. The available transitions are unrestricted — any status can move to any other status. The status indicator block updates color immediately on change.
+The <span id="status-indicator"></span>status field uses a *terminal select* element. The available transitions are unrestricted — any status can move to any other status. The status indicator block updates color immediately on change.
 
 <div id="archive-action"></div>
 
 ## Archive Action
 
-When the task status is **"completed"**, an **[ARCHIVE]** command becomes available. This moves the task to archived status and redirects to the archive page.
+When the task status is **"completed"**, an <span id="archive-button"></span>**[ARCHIVE]** command becomes available. This moves the task to archived status and redirects to the archive page.
 
 <div id="delete-action"></div>
 
 ## Delete Action
 
-A **[DELETE]** command permanently removes the task and redirects to the home page. This action **requires confirmation**.
+A <span id="delete-button"></span>**[DELETE]** command permanently removes the task and redirects to the home page. This action **requires confirmation**.
 
 ## The /todo/latest Shortcut
 
 Navigating to \`/todo/latest\` automatically redirects to the detail page of the **most recently created task**. If no tasks exist, it redirects to the home page.
+
+<div id="back-nav"></div>
 
 ## Back Navigation
 

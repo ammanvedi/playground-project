@@ -68,7 +68,7 @@ export default function TodoDetailPage() {
 
   return (
     <div className="page">
-      <div className="detail-back">
+      <div className="detail-back" data-section-id="back-nav">
         <button onClick={() => navigate('/')} className="btn--link">&larr; Back</button>
       </div>
 
@@ -79,7 +79,7 @@ export default function TodoDetailPage() {
           <span className="section-title">Details</span>
         </div>
         <div className="detail-grid">
-          <div className="field">
+          <div className="field" data-section-id="field-name">
             <label className="field-label">Name</label>
             <input
               type="text"
@@ -91,7 +91,7 @@ export default function TodoDetailPage() {
             />
           </div>
 
-          <div className="field">
+          <div className="field" data-section-id="field-description">
             <label className="field-label">Description</label>
             <textarea
               value={todo.description}
@@ -103,11 +103,12 @@ export default function TodoDetailPage() {
             />
           </div>
 
-          <div className="field">
+          <div className="field" data-section-id="field-status">
             <label className="field-label">Status</label>
             <div className="status-row">
               <span
                 className="status-dot"
+                data-section-id="status-indicator"
                 style={{ background: STATUS_COLORS[todo.status] }}
               />
               <select
@@ -124,7 +125,7 @@ export default function TodoDetailPage() {
             </div>
           </div>
 
-          <div className="field">
+          <div className="field" data-section-id="field-due-date">
             <label className="field-label">Due date</label>
             <input
               type="date"
@@ -134,7 +135,7 @@ export default function TodoDetailPage() {
             />
           </div>
 
-          <div className="field">
+          <div className="field" data-section-id="field-created-at">
             <label className="field-label">Created</label>
             <div className="readonly-value">{formatDateTime(todo.createdAt)}</div>
           </div>
@@ -147,13 +148,14 @@ export default function TodoDetailPage() {
         </div>
         <div className="field-actions">
           {todo.status === 'completed' && (
-            <button onClick={handleArchive} className="btn btn--ghost">
+            <button onClick={handleArchive} className="btn btn--ghost" data-section-id="archive-button">
               Archive
             </button>
           )}
           <button
             onClick={handleDelete}
             className={`btn ${confirmDelete ? 'btn--danger' : 'btn--ghost'}`}
+            data-section-id="delete-button"
           >
             {confirmDelete ? 'Confirm delete' : 'Delete'}
           </button>
